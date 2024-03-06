@@ -24,14 +24,14 @@
 </head>
 
 <body>
-  <header>
+  <header id="top">
     <nav class="navigation-menu">
       <img src="img/Duck-Pond-logo-white.png">
       <div class="navigation-links">
-        <a>Services</a>
-        <a>Work</a>
-        <a>About</a>
-        <button>Get Free Quote</button>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <button class="quote-button">Get Free Quote</button>
       </div>
     </nav>
     <div class="header-information">
@@ -41,7 +41,7 @@
       <h2 class="tagline">Granby's Premier Lawn Care and Landscaping Company</h2>
     </div>
   </header>
-  <section>
+  <section class="services-section" id="services">
     <h2>Services</h2>
     <div class="services-grid">
       <div class="service-card">
@@ -72,7 +72,7 @@
       </div>
 
       <div class="service-card">
-        <img src="img/Bushtrimming.JPG" alt="Avatar" style="width:100%">
+        <img src="img/Bushtrimming.JPG" alt="Avatar" style="width:100%;">
         <div class="container">
           <h3>Core Aeration</h3>
           <p>Promote healthy root growth and improve the overall health of your lawn with our core aeration service. Our
@@ -100,34 +100,45 @@
         </div>
       </div>
     </div>
-    <section class="work-section">
-      <h2>Our Work</h2>
-      <p>The proof is in the photos. Check out some of our projects!</p>
-      <article>
-        <h2>Personalized Solutions</h2>
-        <p>Being a local business in Granby, we deeply understand the unique challenges of maintaining lawns in the
-          area. Our knowledgeable team, equipped with expertise in the latest industry techniques and high-quality
-          equipment, is dedicated to providing tailored solutions for your specific lawn care needs.</p>
-        <button>Get Free Quote</button>
-      </article>
-    </section>
-    <section class="about-section">
-      <img src="img/about.JPG">
+  </section>
+  <section class="work-section" id="work">
+    <h2>Our Work</h2>
+    <p>The proof is in the photos. Check out some of our projects!</p>
+    <div class="work-container">
+      <div class="div1"><img src="img/work01.JPG"></div>
+      <div class="div2"> <img src="img/Work2.JPG"></div>
+      <div class="div3"><img src="img/Work5.JPG"> </div>
+      <div class="div4"> <img src="img/Work6.JPG"></div>
+      <div class="div5"> <img src="img/Work3.JPG"></div>
+      <div class="div6"> <img src="img/Work4.JPG"></div>
+    </div>
+    <article>
+      <h2>Personalized Solutions</h2>
+      <p class="personalized-description">Being a local business in Granby, we deeply understand the unique challenges of maintaining lawns in
+        the
+        area. Our knowledgeable team, equipped with expertise in the latest industry techniques and high-quality
+        equipment, is dedicated to providing tailored solutions for your specific lawn care needs.</p>
+      <button class="quote-button">Get Free Quote</button>
+    </article>
+  </section>
+  <section class="about-section" id="about">
+    <img src="img/about.JPG">
+    <div class="form-wrapper">
+      <h2>About</h2>
+      <p>At Duck Pond Landscaping, attention to detail and customer
+        satisfaction are our top priorities. We are here to transform your property into something you can be proud of.
+        With our range of lawn care and landscaping services, we cater to both residential and commercial customers,
+        ensuring that every property in Granby looks its absolute best.</p>
+    </div>
+  </section>
+  <section class="contact-section">
+    <img src="img/contact-image.jpg">
+    <div class="form-wrapper">
+      <h2>Get Free Quote</h2>
+      <p>Fill out this for for a free quote. We can't wait to work with you!</p>
       <div>
-        <h2>About</h2>
-        <p>satisfaction are our top priorities. We are here to transform your property into something you can be proud
-          of. With our range of lawn care and landscaping services, we cater to both residential and commercial
-          customers, ensuring that every property in Granby looks its absolute best.</p>
-      </div>
-    </section>
-    <section class="contact-section">
-      <img src="img/contact-image.jpg">
-      <div>
-        <h2>Get Free Quote</h2>
-        <p>Fill out this for for a free quote. We can't wait to work with you!</p>
-        <div>
-          <form>
-            <div>
+        <form>
+          <div>
             <div>
               <input type="text">
               <label for="name">Name</label>
@@ -144,36 +155,38 @@
               <input type="text">
               <label for="address">Address (include Zip Code)</label>
             </div>
-        </div>
+          </div>
       </div>
       <div class="services-needed">
         <label for="services">Service(s) Needed</label>
         <textarea></textarea>
-        <button>Submit</button>
+        <div class="submit-section">
+        <p>@DuckPondLandscaping</p>
+        <button class="submit-button">Submit</button>
       </div>
-        </form>
       </div>
-    </section>
-    <footer>
-      <img>
-      <a>Services</a>
-      <a>Our Work</a>
-      <a>About Us</a>
-    </footer>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <a href="#top"><img src="img/Duck-Pond-Logo.png"></a>
+    <div>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#about">About Us</a>
+    </div>
+  </footer>
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-      ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
-    </main>
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </main>
 </body>
 
 </html>
