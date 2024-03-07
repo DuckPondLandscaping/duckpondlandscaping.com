@@ -42,11 +42,10 @@ html {
 }
 
 header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/cover-image.JPG");
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../img/cover-image.JPG");
   background-size: cover;
   height: 100vh;
-  background-color: black;
-  width: 100vw;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -55,18 +54,23 @@ header {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 50px;
+  padding: 15px 50px;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  background-color: #000;
+  z-index: 999;
 }
 
 nav img {
-height: 75px;
-width: auto;
+  height: 50px;
+  width: auto;
 }
 
 .navigation-links {
   color: white;
   display: flex;
-  gap: 50px;
+  gap: 30px;
   align-items: center;
 }
 
@@ -79,6 +83,11 @@ width: auto;
   text-decoration: underline;
 }
 
+.active {
+  background-color: #000000;
+  color: white;
+}
+
 .header-information {
   display: flex;
   flex-direction: column;
@@ -88,7 +97,7 @@ width: auto;
   position: absolute;
   top: 40%;
   margin: auto;
-  width: 100vw
+  width: 100vw;
 }
 
 h1 {
@@ -127,7 +136,6 @@ h2 {
 .service-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  margin: 15px;
 }
 
 .service {
@@ -142,10 +150,12 @@ h2 {
 
 .work-section {
   background-image: url("../img/Duck-Pond-Pattern.png");
-  padding: 50px
+  padding: 50px;
 }
 
-.work-container {
+.work-child {
+  min-width: 150%;
+  overflow-x: auto;
   display: grid;
   grid-template-columns: 2fr repeat(2, 1fr) 2fr;
   grid-template-rows: repeat(2, 1fr);
@@ -153,14 +163,20 @@ h2 {
   grid-row-gap: 10px;
 }
 
-.work-container img {
+.work-container {
+  overflow-x: auto;
+}
+
+.work-container div img {
   max-width: 100%;
 }
 
-.div2 img, .div3 img, .div4 img, .div5 img {
+.div2 img,
+.div3 img,
+.div4 img,
+.div5 img {
   aspect-ratio: 4/3;
   object-fit: cover;
-  padding: ;
 }
 
 .service-card img:hover {
@@ -168,9 +184,10 @@ h2 {
   transition: .2s;
 }
 
-.service-card{
-    display: inline-block; /* change the default display type to inline-block */
-    overflow: hidden;  
+.service-card {
+  display: inline-block;
+  /* change the default display type to inline-block */
+  overflow: hidden;
 }
 
 .div1 {
@@ -200,18 +217,19 @@ h2 {
 
 article {
   text-align: center;
+  margin: 50px 0px
 }
 
 .personalized-description {
   max-width: 750px;
-  margin: auto;
+  margin: 25px auto;
 }
 
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
   gap: 10px;
+  margin: 20px;
   align-items: center;
   /* padding: 50px */
 }
@@ -219,18 +237,22 @@ article {
 .contact-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
   align-items: center;
   background-color: #1A1B1F;
   color: white;
+  width: 100%;
 }
 
-.form-wrapper {
-  margin: 50px;
+.contact-form-wrapper {
+  background-color: #1A1B1F;
+  padding: 25px 50px
+}
+
+.about-wrapper {
+  padding: 10px
 }
 
 .contact-section img {
-  aspect-ratio: 1/1;
   object-fit: cover;
   width: 100%;
 }
@@ -256,7 +278,7 @@ form div {
 .about-section img {
   width: 60%;
   margin: auto;
-  padding: 50px;
+  padding: 25px;
 }
 
 .quote-button {
@@ -265,16 +287,14 @@ form div {
   padding: 10px;
   border: none;
   font-size: 20px;
-  margin: 25px;
 }
 
 .quote-button:hover {
   background-color: white;
   color: black;
-  padding: 10px;
+  padding: 9px;
   border: 1px black solid;
   font-size: 20px;
-  margin: 25px;
   transition: .2s;
 }
 
@@ -284,19 +304,29 @@ input {
   border-bottom: solid 2px white;
 }
 
+input {
+  color: white;
+}
+
+textarea:focus, input:focus {
+  color: white;
+}
+
+input::placeholder{
+  color: white;
+}
+
 form div div {
   gap: 10px;
 }
 
-a{
-
-}
-
 textarea {
   border: 1px solid white;
+  color: white;
   background-color: rgba(0, 0, 0, 0);
   height: 150px;
   resize: none;
+  margin-top: 10px
 }
 
 .submit-section {
@@ -321,7 +351,7 @@ textarea {
 }
 
 footer a img {
-  width: 10%;
+  width: 75px;
   margin: auto;
   display: flex;
 }
@@ -336,18 +366,156 @@ footer {
 
 footer div {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 
 footer div a {
   text-decoration: none;
   color: #000;
+  text-align: center
 }
 
 footer div a:hover {
   text-decoration: underline;
 }
 
+i {
+  font-size: 36px;
+  padding-right: 10px
+}
+
+.facebook-container a {
+  text-decoration: none;
+}
+
+.facebook-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section img {
+    aspect-ratio: 16/9;
+    object-position: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section{
+    grid-template-columns: 1fr;
+    margin: 10px;
+  }
+
+  nav img {
+    height: 50px;
+    width: auto;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+  .services-section {
+    margin: 20px
+  }
+
+  .mobile-container {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px
+  }
+
+  nav div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navigation-links {
+    gap: 20px
+  }
+
+  .icon {
+    padding: 20px
+  }
+  
+  .service-card {
+    margin: 0;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  form div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px 100px;
+  }
+  .contact-form-wrapper {
+    padding: 20px
+  }
+  .quote-button {
+    font-size: 16px;
+  }
+  .tagline {
+    font-size: 16px;
+  }
+  h2{
+    font-size: 24px;
+  }
+  footer div a {
+    font-size: 14px;
+  }
+  i {
+    font-size: 24px;
+  }
+  .submit-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work-section {
+    padding: 20px
+  }
+
+  .work-child {
+    min-width: 450%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 1 / 2 / 2 / 3; }
+    .div3 { grid-area: 1 / 3 / 2 / 4; }
+    .div4 { grid-area: 1 / 4 / 2 / 5; }
+    .div5 { grid-area: 1 / 5 / 2 / 6; }
+    .div6 { grid-area: 1 / 6 / 2 / 7; }
+}
 
 
 
@@ -363,6 +531,8 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
+
 
 /*
  * Remove the gap between audio, canvas, iframes,

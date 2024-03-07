@@ -25,13 +25,13 @@
 
 <body>
   <header id="top">
-    <nav class="navigation-menu">
-      <img src="img/Duck-Pond-logo-white.png">
+    <nav>
+      <a><img src="img/Duck-Pond-logo-white.png" class="icon"></a>
       <div class="navigation-links">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
-        <button class="quote-button">Get Free Quote</button>
+        <a href="#quote"><button class="quote-button">Get Free Quote</button></a>
       </div>
     </nav>
     <div class="header-information">
@@ -105,25 +105,28 @@
     <h2>Our Work</h2>
     <p>The proof is in the photos. Check out some of our projects!</p>
     <div class="work-container">
-      <div class="div1"><img src="img/work01.JPG"></div>
-      <div class="div2"> <img src="img/Work2.JPG"></div>
-      <div class="div3"><img src="img/Work5.JPG"> </div>
-      <div class="div4"> <img src="img/Work6.JPG"></div>
-      <div class="div5"> <img src="img/Work3.JPG"></div>
-      <div class="div6"> <img src="img/Work4.JPG"></div>
+      <div style="width: 100%" class="work-child">
+        <div class="div1"><img src="img/work01.JPG"></div>
+        <div class="div2"> <img src="img/Work2.JPG"></div>
+        <div class="div3"><img src="img/Work5.JPG"> </div>
+        <div class="div4"> <img src="img/Work6.JPG"></div>
+        <div class="div5"> <img src="img/Work3.JPG"></div>
+        <div class="div6"> <img src="img/Work4.JPG"></div>
+      </div>
     </div>
     <article>
       <h2>Personalized Solutions</h2>
-      <p class="personalized-description">Being a local business in Granby, we deeply understand the unique challenges of maintaining lawns in
+      <p class="personalized-description">Being a local business in Granby, we deeply understand the unique challenges
+        of maintaining lawns in
         the
         area. Our knowledgeable team, equipped with expertise in the latest industry techniques and high-quality
         equipment, is dedicated to providing tailored solutions for your specific lawn care needs.</p>
-      <button class="quote-button">Get Free Quote</button>
+      <a href="#quote"> <button class="quote-button">Get Free Quote</button></a>
     </article>
   </section>
   <section class="about-section" id="about">
     <img src="img/about.JPG">
-    <div class="form-wrapper">
+    <div class="about-wrapper">
       <h2>About</h2>
       <p>At Duck Pond Landscaping, attention to detail and customer
         satisfaction are our top priorities. We are here to transform your property into something you can be proud of.
@@ -131,39 +134,43 @@
         ensuring that every property in Granby looks its absolute best.</p>
     </div>
   </section>
-  <section class="contact-section">
+  <section class="contact-section" id="quote">
     <img src="img/contact-image.jpg">
-    <div class="form-wrapper">
+    <div class="contact-form-wrapper">
       <h2>Get Free Quote</h2>
       <p>Fill out this for for a free quote. We can't wait to work with you!</p>
       <div>
-        <form>
+        <form action="https://formspree.io/f/xpzvlqdn" method="POST">
           <div>
             <div>
-              <input type="text">
-              <label for="name">Name</label>
+              <input type="text" name="name" required>
+              <label for="name" name="name">Name</label>
             </div>
             <div>
-              <input type="tel">
+              <input type="tel" name="phone-number" required>
               <label for="phone-number">Phone Number</label>
             </div>
             <div>
-              <input type="email">
+              <input type="email" name="email" required>
               <label for="email">Email</label>
             </div>
             <div>
-              <input type="text">
+              <input type="text" name="address required">
               <label for="address">Address (include Zip Code)</label>
             </div>
           </div>
       </div>
-      <div class="services-needed">
+      <div class="services-needed" name="services" required>
         <label for="services">Service(s) Needed</label>
         <textarea></textarea>
         <div class="submit-section">
-        <p>@DuckPondLandscaping</p>
-        <button class="submit-button">Submit</button>
-      </div>
+          <a href="https://www.facebook.com/DuckPondLandscaping/" style="text-decoration: none">
+            <div class="facebook-container"><i class="fa-brands fa-facebook-f"></i>
+              <p>@DuckPondLandscaping</p>
+            </div>
+          </a>
+          <button class="submit-button">Submit</button>
+        </div>
       </div>
       </form>
     </div>
@@ -176,6 +183,7 @@
       <a href="#about">About Us</a>
     </div>
   </footer>
+  <script src="https://kit.fontawesome.com/07604aa933.js" crossorigin="anonymous"></script>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
