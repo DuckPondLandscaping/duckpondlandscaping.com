@@ -222,7 +222,8 @@ article {
 
 .personalized-description {
   max-width: 750px;
-  margin: 25px auto;
+  margin: 10px auto;
+  padding-bottom:20px;
 }
 
 .about-section {
@@ -466,6 +467,7 @@ i {
 
   p{
     font-size: 14px;
+    margin-top:5px;
   }
 
   form div {
