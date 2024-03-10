@@ -636,6 +636,7 @@ flex-direction: column;
 
   p{
     font-size: 14px;
+    margin-top:5px;
   }
 
   form div {
