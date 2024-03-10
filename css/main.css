@@ -15,6 +15,7 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -50,27 +51,68 @@ header {
   display: flex;
   flex-direction: column;
 }
-
-nav {
-  display: flex;
+.show {
+  display: none;
   justify-content: space-between;
-  padding: 15px 50px;
+  padding: 15px 0px;
+  gap: 25px;
   align-items: center;
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0px;
   background-color: #000;
   z-index: 999;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px;
+  gap: 25px;
+  align-items: center;
+  width: 100vw;
+  top: 0px;
+color: white;
+  z-index: 700;
+}
+
 nav img {
   height: 50px;
   width: auto;
+  margin: 0px 25px
+}
+
+.quote-nav-button-transparent {
+  background-color: black;
+  color: white;
+  margin: 0px 25px;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.quote-nav-button-transparent:hover {
+  background-color: white;
+  color: black;
+  margin: 0px 25px;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.quote-nav-button {
+  background-color: white;
+  color: black;
+  margin: 0px 25px;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
 }
 
 .navigation-links {
   color: white;
   display: flex;
-  gap: 30px;
+  gap: 50px;
   align-items: center;
 }
 
@@ -107,8 +149,8 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
-  margin: 0;
+  font-size: 48px;
+  margin: 15px 0;
 }
 
 .tagline {
@@ -116,26 +158,43 @@ h2 {
   font-weight: 400;
   font-size: 28px;
 }
+.container p {
+ font-weight: 100;
+ margin: 5px 0px;
+}
+
+.container {
+  padding: 20px 30px;
+}
+
+h3{
+  font-weight: 600;
+  font-size: 22px;
+  margin: 15px 0px 0px 0px;
+}
 
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
 }
 
-.container {
-  padding: 2px 16px;
-}
 
 .services-section {
-  margin: 50px
+  margin: 50px 25px
+}
+
+.services-section div{
+  margin: auto;
+  max-width: 1200px;
 }
 
 .service-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  height: 100%;
 }
 
 .service {
@@ -150,25 +209,63 @@ h2 {
 
 .work-section {
   background-image: url("../img/Duck-Pond-Pattern.png");
-  padding: 50px;
 }
 
-.work-child {
-  min-width: 150%;
-  overflow-x: auto;
-  display: grid;
-  grid-template-columns: 2fr repeat(2, 1fr) 2fr;
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+.work-section div{
+  margin: auto;
+  max-width: 1200px;
+}
+
+.work-section h2 {
+  margin: 0
+}
+
+.proof {
+  margin: 0 0 10px 0;
 }
 
 .work-container {
   overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 .work-container div img {
   max-width: 100%;
+  height: 100%;
+}
+
+
+.work-child-2 {
+  font-family: sans-serif;
+  scroll-snap-type: x mandatory;  
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.work-child-2 img {
+  width: 50vw;
+  aspect-ratio: 4/3;
+}
+
+.work-child-2 img, .work-child-2 div {
+  border-right: 1px solid white;
+  padding: 1rem;
+  scroll-snap-align: center;
+  text-align: center;
+  position: relative;
+  object-fit: cover;
+}
+
+.work-child-2 div {
+  padding: 0;
+}
+
+.work-child-2 div img {
+  height: 50%;
+  width: 25vw;
+  aspect-ratio: 4/3;
+  object-fit: cover;
 }
 
 .div2 img,
@@ -176,7 +273,6 @@ h2 {
 .div4 img,
 .div5 img {
   aspect-ratio: 4/3;
-  object-fit: cover;
 }
 
 .service-card img:hover {
@@ -190,49 +286,91 @@ h2 {
   overflow: hidden;
 }
 
-.div1 {
-  grid-area: 1 / 1 / 3 / 2;
+.arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background-color: #191919;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
 }
 
-.div2 {
-  grid-area: 1 / 2 / 2 / 3;
+.arrow:hover {
+  background-color: white;
+  color: #191919; 
+  border: #191919 solid 2px; 
 }
 
-.div3 {
-  grid-area: 2 / 2 / 3 / 3;
-}
 
-.div4 {
-  grid-area: 1 / 3 / 2 / 4;
-}
-
-.div5 {
-  grid-area: 2 / 3 / 3 / 4;
-}
-
-.div6 {
-  grid-area: 1 / 4 / 3 / 5;
+.fa-arrow-left, .fa-arrow-right {
+  font-size: 24px;
+  text-align: center;
+  padding: 0
 }
 
 
 article {
   text-align: center;
-  margin: 50px 0px
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+article p {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 0 0 0 ;
 }
 
 .personalized-description {
   max-width: 750px;
-  margin: 25px auto;
+  margin: 0 0 0 0 ;
 }
 
 .about-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 20px;
-  align-items: center;
-  /* padding: 50px */
+  margin: 50px 25px
 }
+
+.about-section .about-div {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  gap: 50px
+}
+
+.about-div img {
+  max-width: 400px;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+  width: 50%;
+  gap: 10px;
+}
+
+.about-wrapper p, .about-wrapper h2 {
+  margin: 0;
+}
+
+.work-section {
+  background-image: url("../img/Duck-Pond-Pattern.png");
+  padding: 50px 25px
+}
+
+.work-section div{
+  margin: auto;
+  max-width: 1200px;
+}
+
 
 .contact-section {
   display: grid;
@@ -246,10 +384,6 @@ article {
 .contact-form-wrapper {
   background-color: #1A1B1F;
   padding: 25px 50px
-}
-
-.about-wrapper {
-  padding: 10px
 }
 
 .contact-section img {
@@ -275,10 +409,13 @@ form div {
   padding-top: 20px;
 }
 
-.about-section img {
-  width: 60%;
-  margin: auto;
-  padding: 25px;
+.quote-nav-button:hover {
+  background-color: black;
+  color: white;
+  padding: 9px;
+  border: 1px white solid;
+  font-size: 20px;
+  transition: .2s;
 }
 
 .quote-button {
@@ -324,7 +461,7 @@ textarea {
   border: 1px solid white;
   color: white;
   background-color: rgba(0, 0, 0, 0);
-  height: 150px;
+  height: 100px;
   resize: none;
   margin-top: 10px
 }
@@ -332,14 +469,14 @@ textarea {
 .submit-section {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .submit-button {
   background-color: white;
   color: black;
   border: none;
-  padding: 5px 10px;
+  padding: 0px 10px;
 }
 
 .submit-button:hover {
@@ -380,7 +517,7 @@ footer div a:hover {
 }
 
 i {
-  font-size: 36px;
+  font-size: 32px;
   padding-right: 10px
 }
 
@@ -396,6 +533,10 @@ i {
   text-decoration: none;
 }
 
+.facebook-container p{
+margin: 5px 0
+}
+
 @media (max-width: 1000px) {
   .services-grid {
     grid-template-columns: 1fr 1fr;
@@ -409,6 +550,9 @@ i {
     aspect-ratio: 16/9;
     object-position: center;
   }
+  h2 {
+    font-size: 36px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -416,14 +560,12 @@ i {
     grid-template-columns: 1fr;
   }
 
-  .about-section{
-    grid-template-columns: 1fr;
-    margin: 10px;
+  .about-div{
+flex-direction: column;
   }
 
-  nav img {
-    height: 50px;
-    width: auto;
+  .about-wrapper {
+    width: 100%;
   }
 
   h1 {
@@ -441,23 +583,51 @@ i {
     display: block;
   }
 
+  .icon {
+    padding: 5px;
+    height: 35px;
+    width: auto;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
-    padding: 10px
+    gap: 10px;
   }
 
   nav div {
     display: flex;
+    flex-direction: row;
+  }
+
+  .show {
+    display: flex;
     flex-direction: column;
+    gap: 10px;
+  }
+
+  .show div {
+    display: flex;
+    flex-direction: row;
   }
 
   .navigation-links {
-    gap: 20px
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
   }
 
-  .icon {
-    padding: 20px
+  .quote-nav-button{
+    margin: 0;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .quote-nav-button-transparent{
+    margin: 0;
+    font-size: 12px;
+    padding: 5px;
   }
   
   .service-card {
