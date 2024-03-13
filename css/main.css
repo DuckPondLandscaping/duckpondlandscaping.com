@@ -500,7 +500,7 @@ textarea {
   background-color: white;
   color: black;
   border: none;
-  padding: 0px 10px;
+  padding: 10px 10px;
 }
 
 .submit-button:hover {
@@ -555,6 +555,7 @@ i {
   gap: 10px;
   color: white;
   text-decoration: none;
+  margin-bottom:20px;
 }
 
 .facebook-container p{
