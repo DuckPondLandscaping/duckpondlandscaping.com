@@ -75,19 +75,39 @@ let prevScrollPos = window.pageYOffset;
 window.addEventListener('scroll', function() {
   // current scroll position
   const currentScrollPos = window.pageYOffset;
+ if (window.scrollY == 0 && screen.width>=600) {
+    document.querySelector('.show').style.display = "none"
+    document.querySelector('.hide').style.display = "flex"
+    document.querySelector('.mobile').style.display = "none"
 
-  if (prevScrollPos > currentScrollPos) {
-    // user has scrolled up
+  } else if (window.scrollY !== 0 && screen.width>=600) {
     document.querySelector('.show').style.display = "flex"
-  } else if ( prevScrollPos < currentScrollPos) {
-    // user has scrolled down
-    document.querySelector('.show').style.display = "none"
-  } else if ( prevScrollPos == currentScrollPos) {
-    document.querySelector('.show').style.display = "none"
-  } else if (window.scrollY == 0 ) {
-    document.querySelector('.show').style.display = "none"
+    document.querySelector('.mobile').style.display = "none"
+    document.querySelector('.hide').style.display = "none"
+    
+
+  } else if (screen.width<600) {
+    document.querySelector('.mobile').style.display = "flex"
   }
 
   // update previous scroll position
   prevScrollPos = currentScrollPos;
 });
+
+function myFunction() {
+  var x = document.querySelector(".navigation-bottom");
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";
+    document.querySelector(".nav-top").style.bottom = "3%"
+  }
+}
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

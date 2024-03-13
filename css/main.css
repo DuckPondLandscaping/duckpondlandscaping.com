@@ -42,6 +42,14 @@ html {
   text-shadow: none;
 }
 
+.hide {
+  display: flex;
+}
+
+.mobile {
+  display: none;
+}
+
 header {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../img/cover-image.JPG");
   background-size: cover;
@@ -52,7 +60,6 @@ header {
   flex-direction: column;
 }
 .show {
-  display: none;
   justify-content: space-between;
   padding: 15px 0px;
   gap: 25px;
@@ -62,6 +69,7 @@ header {
   top: 0px;
   background-color: #000;
   z-index: 999;
+  display: none;
 }
 
 nav {
@@ -74,6 +82,33 @@ nav {
   top: 0px;
 color: white;
   z-index: 700;
+}
+
+
+.menu-button  {
+padding: 5px;
+color: white;
+background-color: #000;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 35px;
+height: 35px
+}
+
+.menu-button i {
+  padding: 0;
+  font-size: 32px;
+}
+
+.navigation-bottom a {
+  color: white;
+  text-decoration: none;
+}
+
+.navigation-bottom a:hover {
+  text-decoration: underline;
 }
 
 nav img {
@@ -211,11 +246,6 @@ h3{
   background-image: url("../img/Duck-Pond-Pattern.png");
 }
 
-.work-section div{
-  margin: auto;
-  max-width: 1200px;
-}
-
 .work-section h2 {
   margin: 0
 }
@@ -241,6 +271,8 @@ h3{
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  clear:left;
+  gap:0
 }
 
 .work-child-2 img {
@@ -249,7 +281,6 @@ h3{
 }
 
 .work-child-2 img, .work-child-2 div {
-  border-right: 1px solid white;
   padding: 1rem;
   scroll-snap-align: center;
   text-align: center;
@@ -268,12 +299,7 @@ h3{
   object-fit: cover;
 }
 
-.div2 img,
-.div3 img,
-.div4 img,
-.div5 img {
-  aspect-ratio: 4/3;
-}
+
 
 .service-card img:hover {
   transform: scale(1.05);
@@ -296,6 +322,7 @@ h3{
   align-items: center;
   justify-content: center;
   border: none;
+  top: 45%
 }
 
 .arrow:hover {
@@ -319,6 +346,7 @@ article {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 50px 25px;
   gap: 25px;
 }
 
@@ -341,6 +369,7 @@ article p {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   gap: 50px
 }
@@ -363,12 +392,10 @@ justify-content: center;
 
 .work-section {
   background-image: url("../img/Duck-Pond-Pattern.png");
-  padding: 50px 25px
 }
 
 .work-section div{
-  margin: auto;
-  max-width: 1200px;
+  margin: auto; */
 }
 
 
@@ -439,9 +466,6 @@ input {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   border-bottom: solid 2px white;
-}
-
-input {
   color: white;
 }
 
@@ -463,7 +487,7 @@ textarea {
   background-color: rgba(0, 0, 0, 0);
   height: 100px;
   resize: none;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 .submit-section {
@@ -549,6 +573,7 @@ margin: 5px 0
   .contact-section img {
     aspect-ratio: 16/9;
     object-position: center;
+    width: 100%;
   }
   h2 {
     font-size: 36px;
@@ -560,8 +585,114 @@ margin: 5px 0
     grid-template-columns: 1fr;
   }
 
+  .contact-section {
+    width: 100%;
+  }
+
+  .facebook-container {
+    justify-content: center;
+    margin: 5px;
+    max-width: 200px;
+  }
+
+  .facebook-container p {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    padding: 5px;
+    max-width: 200px;
+
+  }
+
+  .submit-section {
+    margin: auto;
+  }
+  .arrow {
+    top: 40%;
+    height: 30px;
+    width: 30px
+  }
+
+  .fa-arrow-left, .fa-arrow-right {
+    font-size: 16px;
+  }
+
+  
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  align-items: center;
+  position: relative; bottom: 5%; padding: 10px;
+}
+
+.mobile {
+  background-color: #000;
+  gap: 0px;
+  display: flex;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 16px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+.show {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+  .work-child-2 img {
+    padding: .25rem;
+  }
+  .work-child-2 div {
+    padding: 0;
+  }
+
+  .work-child-2 div img {
+    padding: .25rem;
+  }
+
   .about-div{
 flex-direction: column;
+  }
+
+  .about-div img {
+    max-width: 200px;
   }
 
   .about-wrapper {
@@ -595,22 +726,6 @@ flex-direction: column;
     gap: 10px;
   }
 
-  nav div {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .show {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .show div {
-    display: flex;
-    flex-direction: row;
-  }
-
   .navigation-links {
     gap: 20px;
     display: flex;
@@ -619,6 +734,12 @@ flex-direction: column;
   }
 
   .quote-nav-button{
+    margin: 0;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .quote-nav-button:hover {
     margin: 0;
     font-size: 12px;
     padding: 5px;
@@ -643,9 +764,14 @@ flex-direction: column;
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px 100px;
+    width: 100%;
   }
   .contact-form-wrapper {
-    padding: 20px
+    padding: 20px;
+  }
+
+  .contact-section img {
+    width: 10px
   }
   .quote-button {
     font-size: 16px;
@@ -666,10 +792,9 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
   }
-
-  .work-section {
-    padding: 20px
-  }
+.work-child-2 {
+  padding: 0 0 0 20px;
+}
 
   .work-child {
     min-width: 450%;
@@ -679,15 +804,6 @@ flex-direction: column;
     grid-column-gap: 10px;
     grid-row-gap: 0px;
     }
-    
-    .div1 { grid-area: 1 / 1 / 2 / 2; }
-    .div2 { grid-area: 1 / 2 / 2 / 3; }
-    .div3 { grid-area: 1 / 3 / 2 / 4; }
-    .div4 { grid-area: 1 / 4 / 2 / 5; }
-    .div5 { grid-area: 1 / 5 / 2 / 6; }
-    .div6 { grid-area: 1 / 6 / 2 / 7; }
-}
-
 
 
 /*
