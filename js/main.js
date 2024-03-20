@@ -71,28 +71,34 @@ scrollBar.addEventListener("scroll", (event) => {
 });
 
 let prevScrollPos = window.pageYOffset;
+window.addEventListener('load', mobileNavDisplay)
+window.addEventListener('resize', mobileNavDisplay)
 
-window.addEventListener('scroll', function() {
+function mobileNavDisplay(){
   // current scroll position
   const currentScrollPos = window.pageYOffset;
- if (window.scrollY == 0 && screen.width>=600) {
+ if (window.scrollY == 0 && screen.width>600) {
     document.querySelector('.show').style.display = "none"
     document.querySelector('.hide').style.display = "flex"
     document.querySelector('.mobile').style.display = "none"
 
-  } else if (window.scrollY !== 0 && screen.width>=600) {
+  } else if (window.scrollY !== 0 && screen.width>600) {
     document.querySelector('.show').style.display = "flex"
     document.querySelector('.mobile').style.display = "none"
     document.querySelector('.hide').style.display = "none"
     
 
-  } else if (screen.width<600) {
+  } else if (screen.width<=600) {
     document.querySelector('.mobile').style.display = "flex"
+    document.querySelector('.show').style.display = "none"
+    document.querySelector('.hide').style.display = "none"
   }
 
   // update previous scroll position
   prevScrollPos = currentScrollPos;
-});
+}
+
+window.addEventListener('scroll', mobileNavDisplay);
 
 function myFunction() {
   var x = document.querySelector(".navigation-bottom");

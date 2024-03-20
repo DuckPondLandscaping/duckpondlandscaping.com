@@ -631,7 +631,6 @@ margin: 5px 0
 .mobile {
   background-color: #000;
   gap: 0px;
-  display: flex;
 }
 
 .sidenav {
@@ -669,13 +668,6 @@ margin: 5px 0
 }
 
 
-.show {
-  display: none;
-}
-
-.hide {
-  display: none;
-}
 
   .work-child-2 img {
     padding: .25rem;
@@ -721,7 +713,7 @@ flex-direction: column;
     width: auto;
   }
 
-  nav {
+  .mobile {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -771,9 +763,7 @@ flex-direction: column;
     padding: 20px;
   }
 
-  .contact-section img {
-    width: 10px
-  }
+
   .quote-button {
     font-size: 16px;
   }
